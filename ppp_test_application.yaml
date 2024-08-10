@@ -1,4 +1,4 @@
-name: test_manager_environment
+name: ppp_test_application
 channels:
   - conda-forge
 dependencies:
