@@ -3,10 +3,10 @@ channels:
   - conda-forge
 dependencies:
   - django=4.1
+  - psycopg2==2.9.1
   - pip
   - pip:
     - djangorestframework==3.13.1
-    - psycopg2==2.9.1
     - django-crispy-forms==2.3
     - crispy-bootstrap5
     - pillow
