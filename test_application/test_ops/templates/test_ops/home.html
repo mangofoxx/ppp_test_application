@@ -1,15 +1,31 @@
 {% extends "test_ops/base.html" %}
 {% block content %}
-    {% for project in projects %}
+
         <article class="media content-section">
           <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ project.project_name }}</a>
-              <small class="text-muted">{{ project.date_added }}</small>
-            </div>
-<!--            <h2><a class="article-title" href="#">TODO: Add bigger title div</a></h2>-->
-<!--            <p class="article-content">{{ post.content }}</p>-->
+            {% if user.is_authenticated %}
+              {% for project in projects %}
+                <div class="article-metadata">
+                  <a class="mr-2" href="#">{{ project.project_name }}</a>
+                  <small class="text-muted">{{ project.date_added }}</small>
+                </div>
+              {% endfor %}
+              {% else %}
+                <div class="card text-center">
+                  <div class="card-header">
+                    Featured
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Bootstrap your testing today</h5>
+                    <p class="card-text">Sign up and join the community</p>
+                    <a href="{% url 'register' %}" class="btn btn-lg btn-primary my-button-color">Sign up</a>
+                  </div>
+                  <div class="card-footer text-muted">
+                    FREE
+                  </div>
+                </div>
+              {% endif %}
           </div>
         </article>
-    {% endfor %}
+
 {% endblock content %}
