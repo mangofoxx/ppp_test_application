@@ -10,6 +10,9 @@
                   <small class="text-muted">{{ project.date_created }}</small>
                 </div>
               {% endfor %}
+                <div class="article-metadata">
+                  <a class="btn btn-lg btn-primary my-button-color" href="{% url 'project-create' %}">Create</a>
+                </div>
               {% else %}
                 <div class="card text-center">
                   <div class="card-header">

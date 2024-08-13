@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/test_application/users" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test_application" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test_application/test_application" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test_application/test_ops" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="ppp_test_application" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
