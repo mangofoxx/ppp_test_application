@@ -1,0 +1,22 @@
+{% extends "test_ops/base.html" %}
+
+{% block content %}
+    <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'project-details' object.project_id %}">
+                  <p>{{ object.project.title }}</p>
+              </a>
+              <small class="text-muted">{{ object.date_created|date:"F d, Y" }}</small>
+            </div>
+            <h2>{{ object.title }}</h2>
+            <p class="article-content">{{ object.description }}</p>
+            <div>
+                {% if object.owner == user %}
+                    <a class="btn-danger btn-sm mt-1 mb-1" href="{% url 'test_scenario-delete' object.project_id object.id %}">Delete</a>
+                {% endif %}
+            </div>
+          </div>
+
+        </article>
+{% endblock content %}

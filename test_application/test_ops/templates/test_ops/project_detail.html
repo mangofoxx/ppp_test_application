@@ -1,0 +1,31 @@
+{% extends "test_ops/base.html" %}
+
+{% block content %}
+    <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ object.title }}</a>
+              <small class="text-muted">{{ object.owner }}</small>
+              <small class="text-muted">{{ object.date_created|date:"F d, Y" }}</small>
+            </div>
+            <h2>{{ object.title }}</h2>
+              <div>
+                  <p class="article-content font-weight-light font-italic">{{ object.description }}</p><ul>
+                {% for scenario in object.test_scenario.all %}
+                    <li><a href="{% url 'test_scenario-details' object.id scenario.id %}">{{ scenario.title }}</a></li>
+                {% empty %}
+                    <li>You dont have any scenarios yet!</li>
+                {% endfor %}
+              </ul>
+              </div>
+              <div>
+                <a class="btn-danger btn-sm mt-4 mb-4" href="{% url 'test_scenario-create' object.id %}">Add test</a>
+              </div>`
+            <div>
+                <a class="btn-danger btn-sm mt-1 mb-1" href="{% url 'project-delete' object.id %}">Delete</a>
+            </div>
+          </div>
+
+        </article>
+{% endblock content %}
+<!--TODO use context variable name instead of object-->

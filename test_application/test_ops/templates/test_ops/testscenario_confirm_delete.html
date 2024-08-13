@@ -1,0 +1,24 @@
+{% extends "test_ops/base.html" %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <!--Cross site request forgery token-->
+
+            <fieldset class="form-group">
+                <h2>Are you sure? Deleting test scenario is permanent action</h2>
+            </fieldset>
+
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">
+                   Yes, Delete
+                </button>
+                <a class="btn btn-outline-info" href="{% url 'test_scenario-details' object.project_id object.id %}">
+                   Cancel
+                </a>
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}
