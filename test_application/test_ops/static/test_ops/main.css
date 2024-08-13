@@ -84,19 +84,19 @@ a.article-title:hover {
 }
 
 .my-button-color {
-    background-color: #913c79;  /* Set the background color */
-    color: #fff;  /* Set the text color if needed */
-    border-color: #913c79;  /* Optional: Match the border color with the background */
+    background-color: #913c79 !important;  /* Set the background color */
+    color: #fff !important;  /* Set the text color if needed */
+    border-color: #913c79 !important;  /* Optional: Match the border color with the background */
 }
 
 .my-button-color:hover {
-    background-color: #ab6196;  /* Set the background color */
-    color: #fff;  /* Set the text color if needed */
-    border-color: #ab6196;  /* Optional: Match the border color with the background */
+    background-color: #ab6196 !important;  /* Set the background color */
+    color: #fff !important;  /* Set the text color if needed */
+    border-color: #ab6196 !important;  /* Optional: Match the border color with the background */
 }
 
 .my-button-color:active {
-    background-color: #ab6196;  /* Background color on click */
-    color: #fff;  /* Text color on click */
-    border-color: #ab6196;  /* Border color on click */
+    background-color: #ab6196 !important;  /* Background color on click */
+    color: #fff !important;  /* Text color on click */
+    border-color: #ab6196 !important;  /* Border color on click */
 }

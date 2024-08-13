@@ -42,7 +42,7 @@ class UserProfile(LoginRequiredMixin, View):
 
     def get(self, request):
         user_form = UpdateUserProfileForm(instance=request.user)
-        return self.render_form(request, user_form=user_form)
+        return self.render_form(request, template_name=self.template_name ,user_form=user_form)
 
     def post(self, request):
         user_form = UpdateUserProfileForm(request.POST, instance=request.user)
@@ -53,12 +53,12 @@ class UserProfile(LoginRequiredMixin, View):
             messages.success(request, f'Account updated for {username}')
             return redirect('profile')
 
-        return self.render_form(request, user_form=user_form)
+        return self.render_form(request, template_name=self.template_name, user_form=user_form)
 
     @staticmethod
-    def render_form(request, **kwargs):
+    def render_form(request, template_name, **kwargs):
         context = {}
         for key, value in kwargs.items():
             context.update({key: value})
 
-        return render(request, 'users/profile.html', context=context)
+        return render(request, template_name=template_name, context=context)

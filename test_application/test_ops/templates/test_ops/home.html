@@ -6,8 +6,8 @@
             {% if user.is_authenticated %}
               {% for project in projects %}
                 <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ project.project_name }}</a>
-                  <small class="text-muted">{{ project.date_added }}</small>
+                  <a class="mr-2" href="{% url 'project-details' project.id %}">{{ project.title }}</a>
+                  <small class="text-muted">{{ project.date_created }}</small>
                 </div>
               {% endfor %}
               {% else %}

@@ -18,8 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from users import views as user_view
-from views import PatchLogoutView, UserLoginView
-from views import UserProfile
+from users.views import PatchLogoutView, UserLoginView, UserProfile
 
 
 urlpatterns = [
